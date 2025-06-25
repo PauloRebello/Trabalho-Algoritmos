@@ -1,11 +1,11 @@
 from util import limpar_tela
-from aluno import cadastrar_aluno
+from participante import cadastrar_participante, listar_participantes
 from professor import cadastrar_professor
 
 def ler_opcao(lim_sup):
     #ler a opção até q seja válido
-    op = input('Escolha uma opção:   ')
-    if op > 0 and op < lim_sup:
+    op = int(input('Escolha uma opção:   '))
+    if 0 <= op <= lim_sup:
         return op
     print('Voce não digitou uma op válida!')
     return -1
@@ -18,7 +18,7 @@ def menu_principal():
     print('3- Consultar')
     print('4- Relatório')
     print('0- Sair')
-    op = ler_opcao(4)
+    op = ler_opcao(2)
 
 #melhorar
     if op ==1:
@@ -35,7 +35,7 @@ def menu_cadastro():
     op = ler_opcao(3)
     
     if op ==1:
-        cadastrar_aluno()
+        cadastrar_participante()
     elif op == 2:
         cadastrar_professor()
 
