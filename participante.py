@@ -1,4 +1,28 @@
-participantes = []
+from banco import gerar_lista_participantes 
+participantes = [
+    {
+        'cpf': '11111111111',
+        'nome': 'Ana Clara',
+        'email': 'ana.clara@email.com',
+        'preferencias': ['IA', 'Web'],
+        'eventos': []
+    },
+    {
+        'cpf': '11111111112',
+        'nome': 'Caio Valentim',
+        'email': 'caio.valentim@email.com',
+        'preferencias': ['Segurança', 'Dados'],
+        'eventos': []
+    },
+    {
+        'cpf': '11111111113',
+        'nome': 'Paulo Rebello',
+        'email': 'paulo.rebello@email.com',
+        'preferencias': ['IA'],
+        'eventos': []
+    }
+] + gerar_lista_participantes(5)
+
 """ 
 ADICIONAR PARTICIPANTES FICTICIOS PARA TESTES.
 POSSÍVEL GERAR COM RANDOM OU IMPORTAR???
