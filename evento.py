@@ -6,13 +6,26 @@ eventos = [
     'participantes': [''] #adicionar cpf de cada participante, criar banco de dados? manual:? teste? ['']
     }
 ]
+
 def cadastrar_evento():
-    #ler todos os dados do aluno {cpf:123, nome: beto, endereço: rua x, + 2}
-    professor = {'cpf': '123', 'nome': 'beto', 'end': 'rua x', 'titulacao': '123123'}
-    #professores.append(professor)
+    print("--- Cadastro de Evento ---")
+    nome = input("Nome do evento: ")
+    data = input("Data (dd-mm-aaaa): ")
+    tema = input("Tema central: ")
+#PRECISO FAZER VALIDAÇÕES PARA ERROS E FPRMATOS ERRADOS
+    evento = {
+        'nome': nome,
+        'data': data,
+        'tema': tema,
+        'participantes': []
+    }
+    eventos.append(evento)
+    print(f"Evento '{nome}' cadastrado com sucesso!")
 
 def listar_eventos():
     print("--- Lista de Eventos ---")
+    for i in eventos:
+        print(f'nome: {i['nome']}, Data: {i['data']}, Tema: {i['tema']}, Participantes: {len(i['participantes'])}')
 
 def buscar_evento_por_nome(nome):
     for i in eventos:
