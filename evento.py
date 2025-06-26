@@ -3,7 +3,7 @@ eventos = [
     'nome': 'Workshop GitHub',
     'data': '15-07-2025',
     'tema': 'GitHub',
-    'participantes': [''] #adicionar cpf de cada participante, criar banco de dados? manual:? teste? ['']
+    'participantes': ['11111111'] #adicionar cpf de cada participante, criar banco de dados? manual:? teste? ['']
     }
 ]
 

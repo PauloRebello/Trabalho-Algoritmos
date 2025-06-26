@@ -21,9 +21,9 @@ def menu_principal():
         print('0- Sair')
         op = ler_opcao(2)
 
-        if op ==1:
+        if op == 1:
             menu_cadastro()
-        elif op ==1:
+        elif op == 2:
             menu_listagem()
         elif op == 0:
             print("Saindo do sistema...")
@@ -54,3 +54,4 @@ def menu_listagem():
         listar_participantes()
     elif op == 2:
         listar_eventos()
+    input("\nPressione Enter para voltar ao menu...")

@@ -40,7 +40,7 @@ def cadastrar_participante():
 
     participante = {"cpf": cpf, "nome": nome, "email": email, "preferencias": [tema.strip() for tema in preferencias], "eventos": []}
 
-    participantes.append(participantes)
+    participantes.append(participante)
     print(f"Participante {nome} cadastrado com sucesso!")
 
 def listar_participantes():
