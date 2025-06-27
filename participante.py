@@ -23,19 +23,28 @@ participantes = [
     }
 ] + gerar_lista_participantes(5)
 
-""" 
-ADICIONAR PARTICIPANTES FICTICIOS PARA TESTES.
-POSSÍVEL GERAR COM RANDOM OU IMPORTAR???
-MELHORAR A EFICÁCIA DO CÓDIGO
-PENSAR EM COMO O USUÁRIO PODE 
-DIGITAR ALGO ERRADO E DAR ERRO NO CÓDIGO
-CPF PODE SERVIR COMO CÓDIGO ÚNICO DO PARTICIPANTE*****
-"""
+def validar_cpf(cpf):
+    return cpf.isdigit() and len(cpf) == 11
+
+def validar_email(email):
+    return "@" in email and "." in email.split("@")[-1]
+
 def cadastrar_participante():
     print("=== Cadastro de Participante ===")
     nome = input("Nome completo: ")
-    cpf = input("CPF: ")
-    email = input("Email: ")
+    
+    while True:
+        cpf = input("CPF (somente números, 11 dígitos): ")
+        if validar_cpf(cpf):
+            break
+        print("CPF inválido. Deve conter exatamente 11 dígitos numéricos.")
+        
+    while True:
+        email = input("Email (ex: nome@email.com): ")
+        if validar_email(email):
+            break
+        print("Email inválido. Certifique-se de incluir '@' e um domínio válido (ex: usuario@dominio.com)")
+
     preferencias = input("Temas de interesse: "). split(",")
 
     participante = {"cpf": cpf, "nome": nome, "email": email, "preferencias": [tema.strip() for tema in preferencias], "eventos": []}
@@ -47,7 +56,8 @@ def listar_participantes():
     print("=== Lista de Participantes ===")
     for p in participantes:
         print(f"CPF: {p['cpf']}, Nome:{p['nome']} , Email: {p['email']}")
-    
+    input("\nPressione Enter para voltar...")
+
 def buscar_participante_cpf(cpf):
     for p in participantes:
         if p["cpf"] == cpf:
